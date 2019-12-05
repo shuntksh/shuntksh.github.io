@@ -5,6 +5,9 @@ on:
         branches:
             - development
 
+env:
+    GATSBY_TELEMETRY_DISABLED: 1
+
 jobs:
     build-and-deploy:
         runs-on: ubuntu-latest
@@ -20,3 +23,6 @@ jobs:
                   # deploy to Azure Web App.
                   npm install
                   npm run build
+                  npm run deploy -- -r https://$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git
+              env:
+                  GH_TOKEN: ${{ secrets.GH_TOKEN }}
