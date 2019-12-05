@@ -11,10 +11,10 @@
     },
     "license": "MIT",
     "scripts": {
-        "build": "gatsby build",
+        "build": "gatsby clean && gatsby build && ncp ./CNAME ./public/CNAME",
         "deploy": "gh-pages -d public -b master",
         "develop": "gatsby develop",
-        "serve": "gatby clean && gatsby build && gatsby serve"
+        "serve": "gatsby serve"
     },
     "dependencies": {
         "gatsby": "^2.18.6",
@@ -49,6 +49,7 @@
         "@types/react": "^16.9.15",
         "@types/react-dom": "^16.9.4",
         "gh-pages": "^2.1.1",
+        "ncp": "^2.0.0",
         "npm-check": "^5.9.0",
         "prettier": "^1.19.1"
     }

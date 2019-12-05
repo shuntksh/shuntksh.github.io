@@ -19,8 +19,8 @@ jobs:
                   node-version: 12.13.0
             - name: npm install, build, and test
               run: |
-                  # Build and test the project, then
-                  # deploy to Azure Web App.
+                  git config --global user.email "git@github.com"
+                  git config --global user.name "Github Action"
                   npm install
                   npm run build
                   npm run deploy -- -r https://$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git
