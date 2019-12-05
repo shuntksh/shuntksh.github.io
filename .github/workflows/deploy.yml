@@ -1,0 +1,22 @@
+name: GitHub Pages Deploy
+
+on:
+    push:
+        branches:
+            - development
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+            - name: Use Node.js v12
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 12.13.0
+            - name: npm install, build, and test
+              run: |
+                  # Build and test the project, then
+                  # deploy to Azure Web App.
+                  npm install
+                  npm run build
