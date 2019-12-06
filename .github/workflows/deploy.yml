@@ -1,29 +1,29 @@
 name: GitHub Pages Deploy
 
 on:
-    push:
-        branches:
-            - development
+  push:
+    branches:
+      - development
 
 env:
-    GATSBY_TELEMETRY_DISABLED: 1
+  GATSBY_TELEMETRY_DISABLED: 1
 
 jobs:
-    build-and-deploy:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v1
-            - name: Use Node.js v12
-              uses: actions/setup-node@v1
-              with:
-                  node-version: 12.13.0
-            - name: npm install, build, and test
-              run: |
-                  git config --global user.email "git@github.com"
-                  git config --global user.name "Github Action"
-                  npm install
-                  npm run build
-                  npm run deploy -- -r https://$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git
-              env:
-                  GH_TOKEN: ${{ secrets.GH_TOKEN }}
-                  GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS }}
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js v12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.13.0
+      - name: npm install, build, and test
+        run: |
+          git config --global user.email "git@github.com"
+          git config --global user.name "Github Action"
+          npm install
+          npm run build
+          npm run deploy -- -r https://$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS }}
