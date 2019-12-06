@@ -51,6 +51,7 @@ const config = {
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
+          'gatsby-remark-external-links',
         ],
       },
     },
@@ -83,6 +84,7 @@ const config = {
         pathToConfigModule: 'src/utils/typography',
       },
     },
+    'gatsby-plugin-sass',
     {
       resolve: `gatsby-plugin-emotion`,
       options: {

@@ -35,7 +35,13 @@ const Bio = () => {
     >
       <p>
         Written by <strong>{author}</strong> who lives and works in Seattle building useful things.{' '}
-        <a href={`https://twitter.com/${social.twitter}`}>You should follow him on Twitter</a>
+        <a
+          href={`https://twitter.com/${social.twitter}`}
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+        >
+          You should follow him on Twitter
+        </a>
       </p>
     </div>
   );

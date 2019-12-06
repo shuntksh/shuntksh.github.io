@@ -6,6 +6,8 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
 
+import './styles.scss';
+
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props;
@@ -15,38 +17,36 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <main>
-          <section>
-            <Bio />
-          </section>
-          <section>
-            {posts.map(({ node }) => {
-              const title = node.frontmatter.title || node.fields.slug;
-              return (
-                <article key={node.fields.slug}>
-                  <header>
-                    <h3
-                      style={{
-                        marginBottom: rhythm(1 / 4),
-                      }}
-                    >
-                      <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                        {title}
-                      </Link>
-                    </h3>
-                  </header>
-                  <section>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: node.frontmatter.description || node.excerpt,
-                      }}
-                    />
-                  </section>
-                </article>
-              );
-            })}
-          </section>
-        </main>
+        <section>
+          <Bio />
+        </section>
+        <section>
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug;
+            return (
+              <article key={node.fields.slug}>
+                <header>
+                  <h3
+                    style={{
+                      marginBottom: rhythm(1 / 4),
+                    }}
+                  >
+                    <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+                      {title}
+                    </Link>
+                  </h3>
+                </header>
+                <section>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: node.frontmatter.description || node.excerpt,
+                    }}
+                  />
+                </section>
+              </article>
+            );
+          })}
+        </section>
       </Layout>
     );
   }
