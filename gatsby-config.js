@@ -24,6 +24,15 @@ const config = {
       },
     },
     {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `tomato`,
+        // Disable the loading spinner.
+        showSpinner: false,
+      },
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
@@ -72,6 +81,13 @@ const config = {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        autoLabel: process.env.NODE_ENV !== 'production',
+        labelFormat: '[local]',
       },
     },
   ],
