@@ -72,7 +72,7 @@ const config = {
 };
 
 if (process.env.GOOGLE_ANALYTICS) {
-    GOOGLE_ANALYTICS_OPTIONS.config.plugins.push({
+    config.plugins.push({
         resolve: "gatsby-plugin-google-analytics",
         options: {
             trackingId: process.env.GOOGLE_ANALYTICS,
