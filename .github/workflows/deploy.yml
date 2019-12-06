@@ -26,3 +26,4 @@ jobs:
                   npm run deploy -- -r https://$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git
               env:
                   GH_TOKEN: ${{ secrets.GH_TOKEN }}
+                  GOOGLE_ANALYTICS;: ${{ secrets.GOOGLE_ANALYTICS }}

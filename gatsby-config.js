@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
     siteMetadata: {
         title: "shun.dev",
         author: "Shun Takahashi",
@@ -47,12 +47,6 @@ module.exports = {
         },
         "gatsby-transformer-sharp",
         "gatsby-plugin-sharp",
-        {
-            resolve: "gatsby-plugin-google-analytics",
-            options: {
-                //trackingId: "ADD YOUR TRACKING ID HERE",
-            },
-        },
         "gatsby-plugin-feed",
         {
             resolve: "gatsby-plugin-manifest",
@@ -76,3 +70,14 @@ module.exports = {
         },
     ],
 };
+
+if (process.env.GOOGLE_ANALYTICS) {
+    GOOGLE_ANALYTICS_OPTIONS.config.plugins.push({
+        resolve: "gatsby-plugin-google-analytics",
+        options: {
+            trackingId: process.env.GOOGLE_ANALYTICS,
+        },
+    });
+}
+
+module.exports = config;
