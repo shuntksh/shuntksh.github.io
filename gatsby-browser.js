@@ -2,5 +2,5 @@
 import 'typeface-montserrat';
 import 'typeface-merriweather';
 
-// For syntax highlightin
+// For syntax highlighting
 import 'prismjs/themes/prism-solarizedlight.css';
