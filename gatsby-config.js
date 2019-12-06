@@ -2,7 +2,7 @@ const config = {
   siteMetadata: {
     title: 'shun.dev',
     author: 'Shun Takahashi',
-    description: 'A starter blog demonstrating what Gatsby can do.',
+    description: 'Personal home page of Shun Takahashi',
     siteUrl: 'https://shun.dev',
     social: {
       twitter: 'shuntksh',
@@ -48,10 +48,6 @@ const config = {
     {
       resolve: 'gatsby-plugin-draft',
       options: {
-        /**
-         * publish draft posts
-         * Default is 'false'
-         **/
         publishDraft: process.env.NODE_ENV !== 'production',
       },
     },
@@ -61,13 +57,13 @@ const config = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Gatsby Starter Blog',
-        short_name: 'GatsbyJS',
+        name: "Shun Takahashi's Site",
+        short_name: 'shun.dev',
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'content/assets/gatsby-icon.png',
+        // icon: 'content/assets/gatsby-icon.png',
       },
     },
     'gatsby-plugin-offline',
