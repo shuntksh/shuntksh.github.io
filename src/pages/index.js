@@ -4,11 +4,10 @@ import { Link, graphql } from 'gatsby';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { rhythm } from '../utils/typography';
 
 import './styles.scss';
 
-class BlogIndex extends React.Component {
+class Index extends React.Component {
   render() {
     const { data } = this.props;
     const siteTitle = data.site.siteMetadata.title;
@@ -17,23 +16,23 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <section>
+        <section className="hero is-dark is-bold">
+          <div className="hero-body">
+            <h1 className="title">shun.dev</h1>
+            <h2 className="subtitle">Shun Takahashi's personal website</h2>
+          </div>
+        </section>
+        <section className="section">
           <Bio />
         </section>
-        <section>
+        <section className="section">
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug;
             return (
               <article key={node.fields.slug}>
                 <header>
-                  <h3
-                    style={{
-                      marginBottom: rhythm(1 / 4),
-                    }}
-                  >
-                    <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                      {title}
-                    </Link>
+                  <h3>
+                    <Link to={node.fields.slug}>{title}</Link>
                   </h3>
                 </header>
                 <section>
@@ -52,7 +51,7 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex;
+export default Index;
 
 export const pageQuery = graphql`
   query {
