@@ -3,6 +3,7 @@ title: Hello World
 date: '2019-12-04T00:00:00Z'
 description: 'Hello World'
 draft: false
+lang: en
 ---
 
 This is my first post on my new fake blog! How exciting!

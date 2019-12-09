@@ -4,11 +4,11 @@ import { Footer } from './footer';
 import { Navbar } from './nav';
 
 const Layout = props => {
-  const { location, title, children } = props;
+  const { location, title, children, lang } = props;
 
   return (
     <div className="container">
-      <Navbar pathname={location.pathname} title={title} />
+      <Navbar pathname={location.pathname} title={title} lang={lang} />
       <main>{children}</main>
       <Footer />
     </div>

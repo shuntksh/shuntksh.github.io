@@ -1,13 +1,7 @@
+const siteMetadata = require('./data/siteMetadata');
+
 const config = {
-  siteMetadata: {
-    title: 'shun.dev',
-    author: 'Shun Takahashi',
-    description: 'Personal home page of Shun Takahashi',
-    siteUrl: 'https://shun.dev',
-    social: {
-      twitter: 'shuntksh',
-    },
-  },
+  siteMetadata,
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
@@ -19,7 +13,7 @@ const config = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/assets`,
+        path: `${__dirname}/assets`,
         name: 'assets',
       },
     },
