@@ -5,8 +5,8 @@ import { Link, withPrefix } from 'gatsby';
 export const Navbar = ({ lang, title }) => (
   <nav className="navbar" role="navigation" aria-label="main navigation">
     <div className="navbar-brand">
-      <Link className="navbar-item" href={withPrefix(`/${lang}`)}>
-        {title}
+      <Link className="navbar-item" to={withPrefix(`/${lang}`)}>
+        {title} ({lang})
       </Link>
 
       <a

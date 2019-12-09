@@ -11,9 +11,9 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
     const { previous, next } = this.props.pageContext;
-
+    const lang = post.frontmatter.lang || this.props.data.site.siteMetadata.defaultLangKey;
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} title={siteTitle} lang={lang}>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -87,6 +87,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        defaultLangKey
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -97,6 +98,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        lang
       }
     }
   }
