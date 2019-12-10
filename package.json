@@ -21,7 +21,7 @@
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
     "bulma": "^0.8.0",
-    "gatsby": "^2.18.7",
+    "gatsby": "^2.18.8",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-draft": "0.0.5",
     "gatsby-plugin-emotion": "^4.1.16",
@@ -50,13 +50,11 @@
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75",
-    "typography": "^0.16.19",
-    "typography-theme-wordpress-2016": "^0.16.19"
+    "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
-    "@types/node": "^12.12.14",
-    "@types/react": "^16.9.15",
+    "@types/node": "^12.12.16",
+    "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
     "gh-pages": "^2.1.1",
     "ncp": "^2.0.0",

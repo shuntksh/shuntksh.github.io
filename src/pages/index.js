@@ -6,7 +6,20 @@ export default props => {
     if (window === undefined) {
       return;
     }
-    window.location.replace(withPrefix(props.data.site.siteMetadata.defaultLangKey));
+
+    let lang = props.data.site.siteMetadata.defaultLangKey;
+    if (navigator) {
+      const locale =
+        navigator.languages && navigator.languages.length
+          ? navigator.languages[0]
+          : navigator.userLanguage || navigator.language || navigator.browserLanguage || lang;
+
+      if (props.data.site.siteMetadata.langs.indexOf(locale) >= 0) {
+        lang = locale;
+      }
+    }
+
+    window.location.replace(withPrefix(lang));
   }, []);
   return <></>;
 };
@@ -16,6 +29,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         defaultLangKey
+        langs
       }
     }
   }

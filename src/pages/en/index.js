@@ -5,8 +5,6 @@ import Bio from '../../components/bio';
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
 
-import '../styles.scss';
-
 class Index extends React.Component {
   render() {
     const { data } = this.props;
@@ -22,9 +20,7 @@ class Index extends React.Component {
             <h2 className="subtitle">Shun Takahashi's personal website</h2>
           </div>
         </section>
-        <section className="section">
-          <Bio />
-        </section>
+
         <section className="section">
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug;
@@ -38,13 +34,16 @@ class Index extends React.Component {
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: node.frontmatter.description || node.excerpt,
+                      __html: node.excerpt,
                     }}
                   />
                 </section>
               </article>
             );
           })}
+        </section>
+        <section className="section">
+          <Bio />
         </section>
       </Layout>
     );

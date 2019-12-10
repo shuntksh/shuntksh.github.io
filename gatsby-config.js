@@ -72,12 +72,6 @@ const config = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography',
-      },
-    },
     'gatsby-plugin-sass',
     {
       resolve: `gatsby-plugin-emotion`,

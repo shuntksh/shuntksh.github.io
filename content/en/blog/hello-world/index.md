@@ -26,3 +26,31 @@ Oh, and here's a great quote from this Wikipedia on
 ```jsx
 const x = () => <div>test</div>;
 ```
+
+```js
+document.querySelector('#seeMore').click();
+document.querySelector('#requestAccountActivityDetailsLink').click();
+
+const keys = ['principal', 'interest', 'escrow', 'fee'];
+var out = [];
+var list = document.querySelectorAll('tbody > tr');
+list.forEach(el => {
+  const date = new Date(el.querySelector('.date').innerText).toLocaleDateString();
+  const line = { date };
+  for (let i = 0; i < keys.length; i++) {
+    line[keys[i]] = parseFloat(
+      el
+        .querySelector('dl.loan-detail')
+        .children[i].innerText.replace(',', '')
+        .replace('$', '')
+        .replace('−', '-')
+        .match(/\-?([\d\.]+\d|\d)/)[0]
+    );
+  }
+  out.push(line);
+});
+var csv = 'date,principal,interest,escrow,fee\n';
+out.reverse().forEach(line => {
+  csv += `${date},${line.principal},${line.interest},${line.escrow},${line.fee}\n`;
+});
+```
